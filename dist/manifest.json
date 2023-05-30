@@ -8,11 +8,27 @@
     "128": "./images/icon_128.png"
   },
   "description": "A Chrome extension making it easier to generate images using Stable Diffusion.",
-  "web_accessible_resources": ["entry.js"],
+  "web_accessible_resources": [
+    "entry.js"
+  ],
   "background": {
-    "scripts": ["background.js"],
+    "scripts": [
+      "background.js",
+      "main.js"
+    ],
     "persistent": true
   },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*",
+        "http://*/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
   "browser_action": {
     "default_title": "Easy Diffuser"
   },
@@ -22,6 +38,7 @@
     "http://*/*",
     "tabs",
     "webRequest",
-    "webRequestBlocking"
+    "webRequestBlocking",
+    "contextMenus"
   ]
 }

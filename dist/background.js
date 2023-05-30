@@ -6390,9 +6390,9 @@ if (false) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var url = exports.url = "http://localhost:5998/";
-var hosts = exports.hosts = "http://localhost:5998/l";
-var iframeHosts = exports.iframeHosts = "http://localhost:5998/";
+var url = exports.url = "http://localhost:9889/";
+var hosts = exports.hosts = "http://localhost:9889/l";
+var iframeHosts = exports.iframeHosts = "http://localhost:9889/";
 
 exports.default = {
   hosts: hosts,
