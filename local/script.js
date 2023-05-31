@@ -1,5 +1,15 @@
 
+const copy = (text) => {
+    const $textarea = document.createElement("textarea");
 
+    document.body.appendChild($textarea);
+
+    $textarea.value = text;
+    $textarea.select();
+
+    document.execCommand('copy');
+    document.body.removeChild($textarea);
+}
 async function getData() {
     const imageUrl = document.getElementById("image").src;
 
@@ -84,9 +94,8 @@ positiveClick.addEventListener("click", async () => {
         tags += tag;
     }
 
-    navigator.clipboard.writeText(tags).then(() => {
-        alert("Positive Prompt Copied");
-    });
+    copy(tags);
+    alert("Positive Prompt Copied");
 
 });
 
@@ -107,8 +116,7 @@ negativeClick.addEventListener("click", async () => {
         tags += tag;
     }
 
-    navigator.clipboard.writeText(tags).then(() => {
-        alert("Negative Prompt Copied");
-    });
+    copy(tags);
+    alert("Negative Prompt Copied");
 
 });
