@@ -27,7 +27,11 @@ class HTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         with open('./index.html', 'w') as f:
             f.writelines(lines)
         
+        self.end_headers()
         
+    def end_headers(self):
+        self.send_header('Access-Control-Allow-Origin', '*')
+        http.server.SimpleHTTPRequestHandler.end_headers(self)
         
 
 if __name__ == '__main__':
