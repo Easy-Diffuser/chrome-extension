@@ -16,9 +16,9 @@ class HTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         
         for i, line in enumerate(lines):
             if line.strip()[:15] == '<img id="image"':
-                source = line[line.find("src"):line.find("alt") - 1]
+                source = line[line.find("src"):]
                 source = source[:4] + f'"{image}"'
-                to_modify = line[:line.find("src")] + source + line[line.find("alt") - 1:]
+                to_modify = line[:line.find("src")] + source + ' />\n'
                 to_modify_num = i
                 break
         
@@ -42,9 +42,9 @@ if __name__ == '__main__':
     
     for i, line in enumerate(lines):
         if line.strip()[:15] == '<img id="image"':
-            source = line[line.find("src"):line.find("alt") - 1]
+            source = line[line.find("src"):]
             source = source[:4] + f'"{default_image}"'
-            to_modify = line[:line.find("src")] + source + line[line.find("alt") - 1:]
+            to_modify = line[:line.find("src")] + source + ' />\n'
             to_modify_num = i
             break
     
