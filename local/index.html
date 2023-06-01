@@ -10,6 +10,46 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <style>
+    .loader {
+      top: -100%;
+      right: -100%;
+      left: -100%;
+      bottom: -100%;
+      margin: auto;
+      z-index: 0;
+      border: 16px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 16px solid #3498db;
+      width: 50px;
+      height: 50px;
+      -webkit-animation: spin 2s linear infinite;
+      /* Safari */
+      animation: spin 2s linear infinite;
+      display: none;
+    }
+
+    /* Safari */
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -48,9 +88,11 @@
         </p>
       </div>
 
-      <div class="row center">
-        <a id="extract-button" class="btn-flat waves-effect waves-light purple white-text">Extract</a>
+      <div id="extract-button" class="row center">
+        <a class="btn-flat waves-effect waves-light purple white-text">Extract</a>
+        <div class="loader"></div>
       </div>
+
       Positive
       <div class="container" style="max-width:300px;">
         <div class="card" style="border-radius: 10px;">
@@ -62,7 +104,6 @@
       <div class="row center">
         <a id="positive-button" class="btn-flat waves-effect waves-light purple white-text">Copy Positive</a>
       </div>
-      <br /><br />
       Negative
       <div class="container" style="max-width:300px;">
         <div class="card" style="border-radius: 10px;">
@@ -71,11 +112,10 @@
           </form>
         </div>
       </div>
-      <br />
       <div class="row center">
         <a id="negative-button" class="btn-flat waves-effect waves-light purple white-text">Copy Negative</a>
       </div>
-      <br /><br />
+      <br />
     </div>
   </div>
 
@@ -87,7 +127,6 @@
         <img style="vertical-align: text-bottom" src="./images/thumbnail.png" alt="" width="14" height="16" />
         Powered by
         <a class="purple-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-        <br />
       </div>
     </div>
     <br />

@@ -27,11 +27,14 @@ async function getData() {
     return response.json();
 }
 
-const extractClick = document.getElementById("extract-button");
+const extractClickPart = document.getElementById("extract-button")
+const extractClick = extractClickPart.firstElementChild;
+const loader = extractClickPart.lastElementChild;
 
 extractClick.addEventListener("click", async () => {
-
     if (document.getElementById("to_tag").checked === true) {
+        extractClick.style.display = 'none';
+        loader.style.display = 'block';
 
         const result = await getData();
 
@@ -72,6 +75,9 @@ extractClick.addEventListener("click", async () => {
 
             neg_element.appendChild(chip)
         }
+
+        extractClick.style.display = 'block';
+        loader.style.display = 'none';
 
         extractClick.setAttribute('class', 'btn-flat disabled')
     }
