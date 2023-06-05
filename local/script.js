@@ -10,7 +10,7 @@ const copy = (text) => {
   document.body.removeChild($textarea);
 };
 
-async function getData() {
+async function getData(option) {
   const imageUrl = document.getElementById("image").src;
 
   const Url = "http://127.0.0.1:5998";
@@ -19,24 +19,8 @@ async function getData() {
     headers: {
       "content-type": "text/plain",
     },
-    body: imageUrl,
+    body: option + imageUrl,
     method: "POST",
-  });
-
-  return response.json();
-}
-
-async function getImage() {
-  const imageUrl = document.getElementById("image").src;
-
-  const Url = "http://127.0.0.1:5998";
-
-  const response = await fetch(Url, {
-    headers: {
-      "content-type": "text/plain",
-    },
-    body: imageUrl,
-    method: "PUT",
   });
 
   return response.json();
@@ -51,7 +35,7 @@ extractClick.addEventListener("click", async () => {
     extractClick.style.display = "none";
     loader.style.display = "block";
 
-    const result = await getData();
+    const result = await getData("tag");
 
     const pos_element = document.getElementById("positive_card");
 
@@ -94,12 +78,12 @@ extractClick.addEventListener("click", async () => {
 
     extractClick.setAttribute("class", "btn-flat disabled");
   }
-
+  
   if (document.getElementById("to_img").checked === true) {
     extractClick.style.display = "none";
     loader.style.display = "block";
 
-    //const result = await getImage();
+    const result = await getData("img");
 
     const res_element = document.getElementById("result");
     res_element.innerHTML = "";
@@ -116,8 +100,8 @@ extractClick.addEventListener("click", async () => {
       "style",
       "margin-left: auto; margin-right: auto; width: 100%; max-width: 350px;"
     );
-    //i.setAttribute("src", result["image"]);
-    i.setAttribute("src", "https://i.imgur.com/ecqRelf.jpeg");
+
+    i.setAttribute("src", "./output/output.png");
 
     d.appendChild(i);
     dd.appendChild(d);
