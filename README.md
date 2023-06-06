@@ -164,4 +164,4 @@ To solve these problems, Easy Diffuser provides the following two functions:
 
 ## Licenses
 
-{link to licenses file}
+[Apache 2.0 License](./LICENSE)

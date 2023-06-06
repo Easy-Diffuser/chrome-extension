@@ -164,4 +164,4 @@ Or you can freely contact via email:
 
 ## Licenses
 
-[GPL 3.0 License](./LICENSE)
+[Apache 2.0 License](./LICENSE)
