@@ -1,6 +1,6 @@
 # Easy Diffuser / Chrome Extension
 
-{Logo}
+![logo](https://github.com/Easy-Diffuser/Service/raw/main/imgs/logo.jfif)
 
 [README_KOR](./README_KOR.md)
 

@@ -1,8 +1,8 @@
 # Easy Diffuser / Chrome Extension
 
-{Logo}
+![logo](https://github.com/Easy-Diffuser/Service/raw/main/imgs/logo.jfif)
 
-Easy Diffuser / Chrome Extension 은 유저와의 상호작용을 담당하는 크롬 확장프로그램입니다. 이 크롬 확장프로그램은 ML 모델로 이미지를 보내고, 결과로 이미지 또는 토큰을 전달받아 Stable Diffusion 사용자를 돕는 것을 목저긍로 합니다.
+Easy Diffuser / Chrome Extension 은 유저와의 상호작용을 담당하는 크롬 확장프로그램입니다. 이 크롬 확장프로그램은 ML 모델로 이미지를 보내고, 결과로 이미지 또는 토큰을 전달받아 Stable Diffusion 사용자를 돕는 것을 목적으로 합니다.
 
 # Table of Contents
 
